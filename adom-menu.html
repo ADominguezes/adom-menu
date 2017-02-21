@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`adom-menu`
+tab menu for use horizontal or vertica�l
+
+@demo demo/index.html 
+-->
+
+<dom-module id="adom-menu">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'adom-menu',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'adom-menu',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
