@@ -2,7 +2,7 @@
 
 <!--
 `adom-menu`
-tab menu for use horizontal or vertica�l
+tab menu for use horizontal or vertical
 
 @demo demo/index.html 
 -->
@@ -10,25 +10,60 @@ tab menu for use horizontal or vertica�l
 <dom-module id="adom-menu">
   <template>
     <style>
-      :host {
-        display: block;
+      [hidden] {
+        display: none !important;
+      }
+      
+      nav {
+        @apply(--adom-menu-nav);
+      }
+      
+      ul {
+        display: flex;
+        flex-direction: row;
+        -ms-flex-direction: row;
+        padding: 0;
+        align-content: center;
+        @apply(--adom-menu-ul);
+      }
+      
+      a {
+        text-decoration: none;
+        @apply(--adom-menu-a);
+      }
+      
+      li {
+        padding: 0.5em;
+        text-align:center;
+        width: 150px;
+        list-style: none;
+        @apply(--adom-menu-li);
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
+    <nav>
+      <ul>
+        <template is="dom-repeat" items="{{listMenu}}">
+          <li><a href="{{item.href}}">{{item.name}}</a></li>
+        </template>
+      </ul>
+    </nav>
   </template>
-
   <script>
     Polymer({
-
       is: 'adom-menu',
-
       properties: {
         prop1: {
           type: String,
           value: 'adom-menu',
         },
-      },
-
+        verticalMenu: {
+          type: Boolean,
+          value: false
+        },
+        listMenu: {
+          type: Array
+        }
+      }
     });
   </script>
 </dom-module>

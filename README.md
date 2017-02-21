@@ -1,6 +1,6 @@
 # \<adom-menu\>
 
-tab menu for use horizontal or vertica�l
+tab menu for use horizontal or vertical
 
 ## Install the Polymer-CLI
 
